@@ -1,0 +1,61 @@
+.page--home {
+  padding-top: 0; /* Hero extends under navbar */
+}
+
+.home__rows {
+  padding: 32px 0 0;
+}
+
+/* ── Loading skeletons ── */
+.page--loading {
+  overflow: hidden;
+}
+.home-loading {
+  min-height: 100vh;
+}
+.home-loading__hero {
+  height: 80vh;
+  min-height: 480px;
+  border-radius: 0;
+}
+.home-loading__rows {
+  padding: 32px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.home-loading__row-title {
+  width: 200px;
+  height: 24px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+.home-loading__cards {
+  display: flex;
+  gap: 14px;
+}
+.home-loading__card {
+  width: var(--card-width);
+  padding-bottom: calc(var(--card-width) * 0.5625);
+  border-radius: var(--card-radius);
+  flex-shrink: 0;
+}
+
+/* ── Error state ── */
+.home-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 60vh;
+  padding: 32px;
+  text-align: center;
+  color: var(--text-dim);
+}
+.home-error h2 { color: var(--text-primary); font-size: 1.4rem; }
+.home-error p  { color: var(--text-muted); max-width: 360px; }
+
+@media (max-width: 768px) {
+  .home-loading__rows { padding: 24px 16px; }
+}

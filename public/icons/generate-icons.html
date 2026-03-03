@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+  VoidTV Icon Generator
+  Open this file in a browser to generate PNG icons from the SVG.
+  Right-click each canvas and "Save image as" to get PNG files.
+  Required sizes: 72, 96, 128, 192, 512
+-->
+<html>
+<head>
+  <title>VoidTV Icon Generator</title>
+  <style>
+    body { background: #111; color: #4ade80; font-family: monospace; padding: 20px; }
+    canvas { border: 1px solid #4ade80; margin: 10px; cursor: pointer; }
+    h1 { color: #4ade80; }
+    p { color: #9cc49c; }
+  </style>
+</head>
+<body>
+  <h1>VoidTV Icon Generator</h1>
+  <p>Click each icon to download the PNG file.</p>
+  <div id="icons"></div>
+  <script>
+    const sizes = [72, 96, 128, 192, 512];
+    const svgUrl = './icon.svg';
+    const img = new Image();
+    img.onload = () => {
+      sizes.forEach(size => {
+        const canvas = document.createElement('canvas');
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, size, size);
+        const label = document.createElement('div');
+        label.textContent = `${size}x${size}`;
+        label.style.color = '#4ade80';
+        canvas.title = `icon-${size}.png — click to download`;
+        canvas.addEventListener('click', () => {
+          const a = document.createElement('a');
+          a.href = canvas.toDataURL('image/png');
+          a.download = `icon-${size}.png`;
+          a.click();
+        });
+        document.getElementById('icons').appendChild(label);
+        document.getElementById('icons').appendChild(canvas);
+      });
+    };
+    img.src = svgUrl;
+  </script>
+</body>
+</html>
