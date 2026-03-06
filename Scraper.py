@@ -27,8 +27,10 @@ class PublicDomainScraper:
             "farce", "parody", "satire", "laugh", "comedian", "gag"
         ],
         "drama": [
-            "drama", "tragic", "tragedy", "romance", "romantic", "love",
-            "emotional", "melodrama", "relationship"
+            "drama", "tragic", "tragedy", "emotional", "melodrama", "relationship"
+        ],
+        "romance": [
+            "romance", "romantic", "love"
         ],
         "action": [
             "action", "adventure", "war", "battle", "fight", "combat",
@@ -40,7 +42,18 @@ class PublicDomainScraper:
             "educational", "history", "historical", "biography",
             "nature", "science", "propaganda", "newsreel"
         ],
+        "noir": [
+            "noir", "detective", "mystery", "crime", "hardboiled", "gumshoe", "sleuth"
+        ],
+        "kids": [
+            "kids", "children", "family", "cartoon", "animation", "animated"
+        ],
     }
+
+    BLACKLIST_KEYWORDS = [
+        "porn", "pornographic", "xxx", "adult", "erotica", "nsfw",
+        "nude", "nudity", "sex", "erotic"
+    ]
 
     # Curated Internet Archive collections known to have public domain films
     ARCHIVE_QUERIES = [
@@ -71,6 +84,10 @@ class PublicDomainScraper:
         {
             "query": 'collection:(film_chest) AND mediatype:(movies)',
             "label": "Film Chest"
+        },
+        {
+            "query": 'collection:(animationandcartoons) AND mediatype:(movies)',
+            "label": "Animation & Cartoons"
         },
     ]
 
@@ -135,27 +152,33 @@ class PublicDomainScraper:
         for query_info in self.ARCHIVE_QUERIES:
             print(f"  → {query_info['label']}...")
             try:
-                resp = self.session.get(
-                    "https://archive.org/advancedsearch.php",
-                    params={
-                        "q": query_info["query"],
-                        "fl": "identifier,title,year,subject,description,licenseurl",
-                        "output": "json",
-                        "rows": 150,
-                        "page": 1,
-                        "sort[]": "downloads desc",
-                    },
-                    timeout=30,
-                )
-                resp.raise_for_status()
-                data = resp.json()
-                docs = data.get("response", {}).get("docs", [])
-                print(f"    Found {len(docs)} items")
+                page = 1
+                while True:
+                    resp = self.session.get(
+                        "https://archive.org/advancedsearch.php",
+                        params={
+                            "q": query_info["query"],
+                            "fl": "identifier,title,year,subject,description,licenseurl",
+                            "output": "json",
+                            "rows": 1000,
+                            "page": page,
+                            "sort[]": "downloads desc",
+                        },
+                        timeout=30,
+                    )
+                    resp.raise_for_status()
+                    data = resp.json()
+                    docs = data.get("response", {}).get("docs", [])
+                    print(f"    Found {len(docs)} items on page {page}")
 
-                for item in docs:
-                    self._process_archive_item(item, query_info["label"])
-
-                time.sleep(1)  # polite delay
+                    for item in docs:
+                        self._process_archive_item(item, query_info["label"])
+                        
+                    if len(docs) < 1000:
+                        break
+                    
+                    page += 1
+                    time.sleep(1)  # polite delay
             except Exception as e:
                 print(f"    Error: {e}")
                 continue
@@ -177,6 +200,12 @@ class PublicDomainScraper:
         # Clean description: strip HTML
         description = re.sub(r'<[^>]+>', '', str(description))
         description = re.sub(r'\s+', ' ', description).strip()
+
+        # Check blacklist
+        text_to_check = f"{title} {description} {' '.join(subjects)}".lower()
+        if any(bad_word in text_to_check.split() for bad_word in self.BLACKLIST_KEYWORDS):
+            return
+
         if len(description) > 300:
             description = description[:297] + "..."
 

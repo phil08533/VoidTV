@@ -23,9 +23,12 @@
     comedy: '😂 Comedy',
     scifi: '🚀 Sci-Fi & Fantasy',
     documentary: '📽 Documentaries',
+    romance: '💖 Romance',
+    noir: '🕵️ Film Noir',
+    kids: '🧸 Kids & Family',
   };
 
-  const CATEGORY_ORDER = ['action', 'horror', 'scifi', 'comedy', 'drama', 'documentary'];
+  const CATEGORY_ORDER = ['action', 'horror', 'scifi', 'comedy', 'drama', 'romance', 'noir', 'kids', 'documentary'];
 
   // ---- DOM References ----
   const $ = (sel) => document.querySelector(sel);
@@ -293,6 +296,10 @@
 
   // ---- Pre-roll Ad Interstitial ----
   function showAdInterstitial(movie, onComplete) {
+    // Ads commented out for now
+    onComplete();
+    return;
+
     // Create the ad overlay inside the player wrap
     const ad = document.createElement('div');
     ad.className = 'ad-interstitial';
