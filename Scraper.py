@@ -42,13 +42,6 @@ class PublicDomainScraper:
         ],
     }
 
-    BLACKLIST_WORDS = [
-        "porn", "sex", "nsfw", "xxx", "hentai", "adult", "erotica",
-        "nude", "nudity", "fetish", "bdsm", "kamasutra", "incest", 
-        "camgirl", "playboy", "penthouse", "softcore", "hardcore",
-        "porno", "pornography", "erotic"
-    ]
-
     # Curated Internet Archive collections known to have public domain films
     ARCHIVE_QUERIES = [
         {
@@ -141,54 +134,36 @@ class PublicDomainScraper:
 
         for query_info in self.ARCHIVE_QUERIES:
             print(f"  → {query_info['label']}...")
-            page = 1
-            total_found = 0
-            while True:
-                try:
-                    resp = self.session.get(
-                        "https://archive.org/advancedsearch.php",
-                        params={
-                            "q": query_info["query"],
-                            "fl": "identifier,title,year,subject,description,licenseurl",
-                            "output": "json",
-                            "rows": 1000,
-                            "page": page,
-                            "sort[]": "downloads desc",
-                        },
-                        timeout=30,
-                    )
-                    resp.raise_for_status()
-                    data = resp.json()
-                    docs = data.get("response", {}).get("docs", [])
-                    
-                    if not docs:
-                        break
-                        
-                    print(f"    Page {page}: Found {len(docs)} items")
-                    total_found += len(docs)
+            try:
+                resp = self.session.get(
+                    "https://archive.org/advancedsearch.php",
+                    params={
+                        "q": query_info["query"],
+                        "fl": "identifier,title,year,subject,description,licenseurl",
+                        "output": "json",
+                        "rows": 150,
+                        "page": 1,
+                        "sort[]": "downloads desc",
+                    },
+                    timeout=30,
+                )
+                resp.raise_for_status()
+                data = resp.json()
+                docs = data.get("response", {}).get("docs", [])
+                print(f"    Found {len(docs)} items")
 
-                    for item in docs:
-                        self._process_archive_item(item, query_info["label"])
+                for item in docs:
+                    self._process_archive_item(item, query_info["label"])
 
-                    page += 1
-                    time.sleep(1)  # polite delay
-                except Exception as e:
-                    print(f"    Error on page {page}: {e}")
-                    break
-            print(f"    Total found for {query_info['label']}: {total_found}")
+                time.sleep(1)  # polite delay
+            except Exception as e:
+                print(f"    Error: {e}")
+                continue
 
     def _process_archive_item(self, item, collection_label):
         """Process a single Internet Archive item into a movie entry."""
         identifier = item.get("identifier", "")
-        
-        # Archive API sometimes returns title as a list
-        title_raw = item.get("title", "")
-        if isinstance(title_raw, list):
-            title = title_raw[0] if title_raw else ""
-        else:
-            title = title_raw
-        title = str(title).strip()
-        
+        title = item.get("title", "").strip()
         year = item.get("year")
         subjects = item.get("subject", [])
         description = item.get("description", "")
@@ -207,18 +182,6 @@ class PublicDomainScraper:
 
         if not description or len(description) < 10:
             description = f"A classic {collection_label.lower()} film."
-
-        # Check blacklist before proceeding
-        search_text = f"{title} {description} {' '.join(subjects) if isinstance(subjects, list) else str(subjects)}".lower()
-        
-        is_blacklisted = False
-        for word in self.BLACKLIST_WORDS:
-            if re.search(r'\b' + re.escape(word) + r'\b', search_text):
-                is_blacklisted = True
-                break
-                
-        if is_blacklisted:
-            return
 
         category = self.classify_category(title, subjects)
         thumbnail = f"https://archive.org/services/img/{identifier}"
