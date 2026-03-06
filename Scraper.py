@@ -180,7 +180,15 @@ class PublicDomainScraper:
     def _process_archive_item(self, item, collection_label):
         """Process a single Internet Archive item into a movie entry."""
         identifier = item.get("identifier", "")
-        title = item.get("title", "").strip()
+        
+        # Archive API sometimes returns title as a list
+        title_raw = item.get("title", "")
+        if isinstance(title_raw, list):
+            title = title_raw[0] if title_raw else ""
+        else:
+            title = title_raw
+        title = str(title).strip()
+        
         year = item.get("year")
         subjects = item.get("subject", [])
         description = item.get("description", "")
