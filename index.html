@@ -1,22 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#050e05" />
-    <meta name="description" content="VoidTV — Stream verified public domain films. Classic cinema, free forever." />
-    <meta name="keywords" content="public domain movies, free streaming, classic films, silent movies, vintage cinema" />
-    <meta property="og:title" content="VoidTV — Public Domain Streaming" />
-    <meta property="og:description" content="Stream verified public domain films. Classic cinema, free forever." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" type="image/svg+xml" href="/VoidTV/icons/icon.svg" />
-    <link rel="apple-touch-icon" href="/VoidTV/icons/icon-192.png" />
-    <link rel="manifest" href="/VoidTV/manifest.json" />
-    <title>VoidTV — Public Domain Streaming</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>V🕳IDTV — Free Public Domain Cinema</title>
+    <meta name="description"
+        content="Stream hundreds of classic public domain movies for free. No sign-up required. Horror, Sci-Fi, Comedy, Drama, Action, and Documentaries.">
+    <meta name="theme-color" content="#050510">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕳</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- LOADING SCREEN -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">V🕳IDTV</div>
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header class="main-nav" id="main-nav">
+        <div class="nav-left">
+            <a href="#" class="logo" id="logo-link">V🕳IDSTV</a>
+            <nav class="nav-categories" id="nav-categories">
+                <!-- Populated by JS -->
+            </nav>
+        </div>
+        <div class="nav-right">
+            <button class="search-toggle" id="search-toggle" aria-label="Search">🔍</button>
+            <button class="install-btn" id="install-btn">⬇ Install</button>
+        </div>
+    </header>
+
+    <!-- MOBILE CATEGORY BAR -->
+    <div class="mobile-cat-bar" id="mobile-cat-bar">
+        <!-- Populated by JS -->
+    </div>
+
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="search-overlay">
+        <button class="search-close" id="search-close">&times;</button>
+        <div class="search-container">
+            <span class="search-icon-wrap">🔍</span>
+            <input type="text" id="search-input" placeholder="Search movies by title, description..."
+                autocomplete="off">
+        </div>
+        <div class="search-results" id="search-results"></div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-backdrop" id="hero-backdrop"></div>
+        <div class="hero-content">
+            <div class="hero-badge" id="hero-badge">🎬 Featured</div>
+            <h1 class="hero-title" id="hero-title">Loading...</h1>
+            <p class="hero-desc" id="hero-desc"></p>
+            <div class="hero-meta" id="hero-meta"></div>
+            <div class="hero-actions">
+                <button class="btn-play" id="hero-play">▶ Play</button>
+                <button class="btn-info" id="hero-info">ℹ More Info</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <main class="content-area" id="content-area">
+        <!-- Populated by JS -->
+    </main>
+
+    <!-- MOVIE MODAL -->
+    <div class="movie-modal" id="movie-modal">
+        <div class="modal-backdrop" id="modal-backdrop"></div>
+        <div class="modal-panel" id="modal-panel">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div class="modal-player-wrap" id="modal-player-wrap">
+                <!-- Player or placeholder inserted by JS -->
+            </div>
+            <div class="modal-details" id="modal-details">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-brand">V🕳IDSTV</div>
+        <p class="footer-disclaimer">All content is believed to be in the public domain. Sourced from the Internet
+            Archive. If you believe any content is incorrectly listed, please contact us.</p>
+        <div class="footer-links">
+            <a href="https://archive.org" target="_blank" rel="noopener">Internet Archive</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
 </html>
