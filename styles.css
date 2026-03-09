@@ -1339,3 +1339,43 @@ img {
 .no-movies p {
     font-size: 0.9rem;
 }
+
+/* ---- Public Domain Verification (modal) ---- */
+.pd-verified {
+    color: #7c52f0;
+    font-weight: 600;
+}
+
+.pd-evidence {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 12px;
+}
+
+.pd-evidence li {
+    padding: 4px 0;
+    font-size: 0.88rem;
+    color: #b8b8d4;
+}
+
+.pd-evidence li::before {
+    content: "• ";
+    color: #5b20e4;
+    font-weight: bold;
+}
+
+.pd-source {
+    font-size: 0.85rem;
+    color: #7a7a9a;
+    margin-top: 4px;
+}
+
+.pd-source a {
+    color: #7c52f0;
+    text-decoration: none;
+}
+
+.pd-source a:hover {
+    color: #a480ff;
+    text-decoration: underline;
+}

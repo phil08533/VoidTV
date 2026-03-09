@@ -65,7 +65,7 @@
   // ---- Init ----
   async function init() {
     try {
-      const resp = await fetch('movies.json');
+      const resp = await fetch('verified_public_domain_movies.json');
       const data = await resp.json();
       allMovies = data.movies || [];
       shuffleArray(allMovies);
@@ -90,14 +90,14 @@
   function setupHero() {
     if (allMovies.length === 0) return;
 
-    const candidates = allMovies.filter(m => m.description && m.description.length > 40);
+    const candidates = allMovies.filter(m => m.confidence_score >= 90);
     heroMovie = candidates.length > 0
       ? candidates[Math.floor(Math.random() * candidates.length)]
       : allMovies[0];
 
-    dom.heroBackdrop.style.backgroundImage = `url('${heroMovie.thumbnail}')`;
+    dom.heroBackdrop.style.backgroundImage = `url('${heroMovie.poster}')`;
     dom.heroTitle.textContent = heroMovie.title;
-    dom.heroDesc.textContent = heroMovie.description;
+    dom.heroDesc.textContent = heroMovie.creator ? `Directed by ${heroMovie.creator}` : '';
     dom.heroMeta.innerHTML = `
       <span class="year-tag">${heroMovie.year}</span>
       <span class="cat-tag">${heroMovie.category}</span>
@@ -274,7 +274,7 @@
 
     card.innerHTML = `
       <div class="card-thumb-wrap">
-        <img class="card-thumb" src="${movie.thumbnail}" alt="${escapeHtml(movie.title)}" loading="lazy"
+        <img class="card-thumb" src="${movie.poster}" alt="${escapeHtml(movie.title)}" loading="lazy"
              onerror="this.style.background='linear-gradient(135deg, #0d1b3e, #1a0533)'; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22225%22><rect fill=%22%2312122a%22 width=%22400%22 height=%22225%22/><text x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2240%22 fill=%22%235a5a7a%22>🎬</text></svg>'">
         <div class="card-overlay">
           <div class="card-title">${escapeHtml(movie.title)}</div>
@@ -336,6 +336,18 @@
     }, 1000);
   }
 
+  // ---- Public Domain Evidence Labels ----
+  function formatEvidence(key) {
+    const labels = {
+      explicit_public_domain_license: 'Explicit Public Domain License',
+      release_year_pre_1928: 'Released Before 1928 (Public Domain by Law)',
+      trusted_collection: 'Source: Trusted Archive Collection',
+      public_domain_subject_tag: 'Metadata Tagged: Public Domain',
+      us_government_creator: 'Created by U.S. Government Agency',
+    };
+    return labels[key] || key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  }
+
   // ---- Movie Modal ----
   function openModal(movie, autoPlay) {
     dom.movieModal.classList.add('active');
@@ -348,7 +360,7 @@
       // Show pre-roll ad, then load the player
       // First, set thumbnail as background
       dom.modalPlayerWrap.innerHTML = `
-        <div class="modal-player-placeholder" style="background-image: url('${movie.thumbnail}')">
+        <div class="modal-player-placeholder" style="background-image: url('${movie.poster}')">
           <div class="modal-big-play" style="opacity:0.3">▶</div>
         </div>
       `;
@@ -361,7 +373,7 @@
       });
     } else {
       dom.modalPlayerWrap.innerHTML = `
-        <div class="modal-player-placeholder" style="background-image: url('${movie.thumbnail}')"
+        <div class="modal-player-placeholder" style="background-image: url('${movie.poster}')"
              id="modal-play-trigger">
           <div class="modal-big-play">▶</div>
         </div>
@@ -373,7 +385,7 @@
           trigger.onclick = () => {
             // Show pre-roll ad when user clicks play
             dom.modalPlayerWrap.innerHTML = `
-              <div class="modal-player-placeholder" style="background-image: url('${movie.thumbnail}')">
+              <div class="modal-player-placeholder" style="background-image: url('${movie.poster}')">
                 <div class="modal-big-play" style="opacity:0.3">▶</div>
               </div>
             `;
@@ -390,26 +402,28 @@
     }
 
     // Details
+    const pdEvidence = (movie.public_domain_evidence || [])
+      .map(e => `<li>${formatEvidence(e)}</li>`).join('');
     dom.modalDetails.innerHTML = `
       <h2 class="modal-title">${escapeHtml(movie.title)}</h2>
       <div class="modal-meta">
         <span class="modal-year">${movie.year}</span>
-        <span class="modal-cat">${capitalize(movie.category)}</span>
-        <span>${movie.collection || ''}</span>
+        <span class="modal-cat">${capitalize(movie.category || 'drama')}</span>
+        ${movie.creator ? `<span>• ${escapeHtml(movie.creator)}</span>` : ''}
       </div>
-      <p class="modal-description">${escapeHtml(movie.description)}</p>
       <div class="modal-actions">
         <button class="btn-play" id="modal-play-now-btn">▶ Play Now</button>
-        <button class="btn-info" onclick="navigator.clipboard.writeText('${movie.stream_url}').then(() => this.textContent = '✓ Link Copied!').catch(() => {})">
+        <button class="btn-info" onclick="navigator.clipboard.writeText('${movie.source_page}').then(() => this.textContent = '✓ Link Copied!').catch(() => {})">
           🔗 Share
         </button>
       </div>
       <div class="modal-citation">
-        <h4>Source & License</h4>
-        <p>
-          <strong>${escapeHtml(movie.title)}</strong> (${movie.year})<br>
-          Source: <a href="${movie.source_url}" target="_blank" rel="noopener">${movie.source}</a><br>
-          License: ${movie.license}
+        <h4>Public Domain Status: <span class="pd-verified">Verified (${movie.confidence_score}% Confidence)</span></h4>
+        <ul class="pd-evidence">
+          ${pdEvidence}
+        </ul>
+        <p class="pd-source">
+          Source: <a href="${movie.source_page}" target="_blank" rel="noopener">Internet Archive</a>
         </p>
       </div>
     `;
@@ -420,7 +434,7 @@
       if (playNowBtn) {
         playNowBtn.onclick = () => {
           dom.modalPlayerWrap.innerHTML = `
-            <div class="modal-player-placeholder" style="background-image: url('${movie.thumbnail}')">
+            <div class="modal-player-placeholder" style="background-image: url('${movie.poster}')">
               <div class="modal-big-play" style="opacity:0.3">▶</div>
             </div>
           `;
@@ -477,7 +491,7 @@
       const item = document.createElement('div');
       item.className = 'search-result-item';
       item.innerHTML = `
-        <img class="search-result-thumb" src="${movie.thumbnail}" alt="" loading="lazy"
+        <img class="search-result-thumb" src="${movie.poster}" alt="" loading="lazy"
              onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2245%22><rect fill=%22%2312122a%22 width=%2280%22 height=%2245%22/></svg>'">
         <div class="search-result-info">
           <h4>${escapeHtml(movie.title)}</h4>
