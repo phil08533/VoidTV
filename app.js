@@ -11,6 +11,9 @@
   let activeCategory = 'all';
   let heroMovie = null;
   let deferredInstallPrompt = null;
+  let introAvailable = false; // set once at startup by checkIntroVideo()
+
+  const INTRO_SRC = 'voidintro/voidintro.mp4';
 
   // ---- Ad Config ----
   const AD_DURATION = 5; // seconds before skip is available
@@ -62,17 +65,60 @@
     logoLink: $('#logo-link'),
   };
 
+  // ---- Intro video check (runs once at startup) ----
+  async function checkIntroVideo() {
+    try {
+      const resp = await fetch(INTRO_SRC, { method: 'HEAD' });
+      introAvailable = resp.ok;
+    } catch (_) {
+      introAvailable = false;
+    }
+  }
+
+  // ---- Play intro then call onComplete ----
+  function playIntro(onComplete) {
+    const overlay = document.createElement('div');
+    overlay.id = 'intro-overlay';
+    overlay.className = 'intro-overlay';
+
+    overlay.innerHTML = `
+      <video class="intro-video" src="${INTRO_SRC}" autoplay playsinline></video>
+      <button class="intro-skip">Skip ▶▶</button>
+    `;
+
+    document.body.appendChild(overlay);
+
+    const video = overlay.querySelector('video');
+    const skipBtn = overlay.querySelector('.intro-skip');
+
+    function finish() {
+      overlay.remove();
+      onComplete();
+    }
+
+    video.addEventListener('ended', finish);
+    video.addEventListener('error', finish); // if video fails mid-play, skip it
+    skipBtn.addEventListener('click', finish);
+  }
+
+  // ---- Wrapper: optionally play intro before opening modal ----
+  function withIntro(onComplete) {
+    if (introAvailable) {
+      playIntro(onComplete);
+    } else {
+      onComplete();
+    }
+  }
+
   // ---- Init ----
   async function init() {
-    try {
-      const resp = await fetch('verified_public_domain_movies.json');
-      const data = await resp.json();
-      allMovies = data.movies || [];
-      shuffleArray(allMovies);
-    } catch (err) {
-      console.error('Failed to load movies:', err);
-      allMovies = [];
-    }
+    // Check intro and load data in parallel
+    const [, data] = await Promise.allSettled([
+      checkIntroVideo(),
+      fetch('verified_public_domain_movies.json').then(r => r.json()).catch(() => ({ movies: [] })),
+    ]);
+    allMovies = (data.value || {}).movies || [];
+    shuffleArray(allMovies);
 
     setupHero();
     buildCategoryNav();
@@ -104,7 +150,7 @@
       <span>• ${heroMovie.source}</span>
     `;
 
-    dom.heroPlay.onclick = () => openModal(heroMovie, true);
+    dom.heroPlay.onclick = () => withIntro(() => openModal(heroMovie, true));
     dom.heroInfo.onclick = () => openModal(heroMovie, false);
   }
 
@@ -270,7 +316,7 @@
   function buildMovieCard(movie) {
     const card = document.createElement('div');
     card.className = 'movie-card';
-    card.onclick = () => openModal(movie, false);
+    card.onclick = () => withIntro(() => openModal(movie, false));
 
     card.innerHTML = `
       <div class="card-thumb-wrap">
@@ -500,7 +546,7 @@
       `;
       item.onclick = () => {
         closeSearch();
-        openModal(movie, false);
+        withIntro(() => openModal(movie, false));
       };
       dom.searchResults.appendChild(item);
     });

@@ -1379,3 +1379,43 @@ img {
     color: #a480ff;
     text-decoration: underline;
 }
+
+/* ============================================================
+   Intro Video Overlay
+   ============================================================ */
+
+.intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.intro-skip {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background: rgba(0, 0, 0, 0.65);
+    color: #e8e8f0;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.5rem 1.1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: background 0.2s;
+}
+
+.intro-skip:hover {
+    background: rgba(91, 32, 228, 0.75);
+    border-color: #7c52f0;
+}

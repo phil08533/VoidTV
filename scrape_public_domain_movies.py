@@ -15,6 +15,7 @@ Cron (weekly Sunday 3 AM):
 """
 
 import re
+import os
 import json
 import time
 import logging
@@ -35,6 +36,8 @@ log = logging.getLogger("voidtv-scraper")
 # ---------------------------------------------------------------------------
 ARCHIVE_SEARCH_URL = "https://archive.org/advancedsearch.php"
 ARCHIVE_METADATA_URL = "https://archive.org/metadata/{}"
+OMDB_API_URL = "http://www.omdbapi.com/"
+OMDB_API_KEY = os.environ.get("OMDB_API_KEY", "")  # free key at omdbapi.com
 CONFIDENCE_THRESHOLD = 90
 ROWS_PER_PAGE = 500
 OUTPUT_FILE = "verified_public_domain_movies.json"
@@ -386,6 +389,35 @@ class ArchiveScraper:
         return False  # Treat as inaccessible if we can't confirm
 
     # ------------------------------------------------------------------
+    def _fetch_poster(self, title: str, year, identifier: str) -> str:
+        """
+        Return the best poster URL available for this film.
+
+        Priority:
+          1. OMDB API (set OMDB_API_KEY env var — free at omdbapi.com)
+          2. archive.org services/img thumbnail (always available)
+        """
+        if OMDB_API_KEY:
+            try:
+                params = {
+                    "t": title,
+                    "y": str(year) if year else "",
+                    "apikey": OMDB_API_KEY,
+                    "type": "movie",
+                }
+                resp = self.session.get(OMDB_API_URL, params=params, timeout=10)
+                data = resp.json()
+                poster = data.get("Poster", "N/A")
+                if poster and poster != "N/A":
+                    log.info("OMDB poster found for %s (%s)", title, year)
+                    return poster
+            except Exception as exc:
+                log.warning("OMDB lookup failed for %s: %s", title, exc)
+
+        # Fallback — archive.org auto-generated thumbnail
+        return f"https://archive.org/services/img/{identifier}"
+
+    # ------------------------------------------------------------------
     def _fetch_page(self, page: int) -> list[dict]:
         params = {
             "q": self.QUERY,
@@ -479,6 +511,7 @@ class ArchiveScraper:
             return
 
         category = _classify_category(title, subjects)
+        poster = self._fetch_poster(title, year, identifier)
 
         self.accepted.append({
             "title": title,
@@ -486,7 +519,7 @@ class ArchiveScraper:
             "creator": creator or "Unknown",
             "identifier": identifier,
             "category": category,
-            "poster": f"https://archive.org/services/img/{identifier}",
+            "poster": poster,
             "embed_url": f"https://archive.org/embed/{identifier}",
             "source": "Internet Archive",
             "confidence_score": score,
