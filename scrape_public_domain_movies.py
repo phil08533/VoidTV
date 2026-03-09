@@ -34,6 +34,7 @@ log = logging.getLogger("voidtv-scraper")
 # Constants
 # ---------------------------------------------------------------------------
 ARCHIVE_SEARCH_URL = "https://archive.org/advancedsearch.php"
+ARCHIVE_METADATA_URL = "https://archive.org/metadata/{}"
 CONFIDENCE_THRESHOLD = 90
 ROWS_PER_PAGE = 500
 OUTPUT_FILE = "verified_public_domain_movies.json"
@@ -356,6 +357,35 @@ class ArchiveScraper:
         self._seen_keys: set[str] = set()
 
     # ------------------------------------------------------------------
+    def _item_accessible(self, identifier: str) -> bool:
+        """
+        Verify the item actually exists and is publicly accessible on
+        the Internet Archive by fetching its metadata endpoint.
+        Returns True only if the item has a non-empty title in its metadata.
+        """
+        url = ARCHIVE_METADATA_URL.format(identifier)
+        for attempt in range(3):
+            try:
+                resp = self.session.get(url, timeout=20)
+                if resp.status_code == 404:
+                    return False
+                resp.raise_for_status()
+                meta = resp.json()
+                # A missing or error key means the item is gone / private
+                if meta.get("error"):
+                    return False
+                title = (meta.get("metadata") or {}).get("title")
+                return bool(title)
+            except Exception as exc:
+                wait = 2 ** attempt
+                log.warning(
+                    "Metadata check %s: %s — retry in %ds", identifier, exc, wait
+                )
+                time.sleep(wait)
+        log.warning("Metadata check failed for %s after 3 attempts", identifier)
+        return False  # Treat as inaccessible if we can't confirm
+
+    # ------------------------------------------------------------------
     def _fetch_page(self, page: int) -> list[dict]:
         params = {
             "q": self.QUERY,
@@ -431,6 +461,19 @@ class ArchiveScraper:
                 "identifier": identifier,
                 "confidence_score": score,
                 "rejection_reason": reason,
+                "timestamp": datetime.utcnow().isoformat(),
+            })
+            return
+
+        # Verify the item is actually accessible on archive.org before accepting
+        if not self._item_accessible(identifier):
+            log.warning("Item not accessible on Archive.org — skipping: %s", identifier)
+            self.rejected.append({
+                "title": title,
+                "year": year,
+                "identifier": identifier,
+                "confidence_score": score,
+                "rejection_reason": "item_not_accessible",
                 "timestamp": datetime.utcnow().isoformat(),
             })
             return
