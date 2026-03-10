@@ -293,6 +293,1014 @@
       ],
       "source_page": "https://archive.org/details/cyrano-de-bergerac-1900-directed-by-clement-maurice",
       "verified_at": "2026-03-09"
+    },{
+      "title": "The Phantom of the Opera (1925)",
+      "year": 1925,
+      "creator": "Rupert Julian",
+      "identifier": "ThePhantomOfTheOpera1925",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/ThePhantomOfTheOpera1925",
+      "embed_url": "https://archive.org/embed/ThePhantomOfTheOpera1925",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/ThePhantomOfTheOpera1925",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "A Trip to the Moon",
+      "year": 1902,
+      "creator": "Georges Méliès",
+      "identifier": "A_Trip_to_the_Moon",
+      "category": "scifi",
+      "poster": "https://archive.org/services/img/A_Trip_to_the_Moon",
+      "embed_url": "https://archive.org/embed/A_Trip_to_the_Moon",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/A_Trip_to_the_Moon",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "The General",
+      "year": 1926,
+      "creator": "Clyde Bruckman & Buster Keaton",
+      "identifier": "The_General_Buster_Keaton",
+      "category": "comedy",
+      "poster": "https://archive.org/services/img/The_General_Buster_Keaton",
+      "embed_url": "https://archive.org/embed/The_General_Buster_Keaton",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/The_General_Buster_Keaton",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Dr. Jekyll and Mr. Hyde",
+      "year": 1920,
+      "creator": "John S. Robertson",
+      "identifier": "Dr_Jekyll_and_Mr_Hyde_1920",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/Dr_Jekyll_and_Mr_Hyde_1920",
+      "embed_url": "https://archive.org/embed/Dr_Jekyll_and_Mr_Hyde_1920",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/Dr_Jekyll_and_Mr_Hyde_1920",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Nosferatu",
+      "year": 1922,
+      "creator": "F.W. Murnau",
+      "identifier": "nosferatu-1922_202504",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/nosferatu-1922_202504",
+      "embed_url": "https://archive.org/embed/nosferatu-1922_202504",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/nosferatu-1922_202504",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "The Kid",
+      "year": 1921,
+      "creator": "Charles Chaplin",
+      "identifier": "TheKid_1921",
+      "category": "comedy",
+      "poster": "https://archive.org/services/img/TheKid_1921",
+      "embed_url": "https://archive.org/embed/TheKid_1921",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/TheKid_1921",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "The Adventures of Prince Achmed",
+      "year": 1926,
+      "creator": "Lotte Reiniger",
+      "identifier": "TheAdventuresOfPrinceAchmed",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/TheAdventuresOfPrinceAchmed",
+      "embed_url": "https://archive.org/embed/TheAdventuresOfPrinceAchmed",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/TheAdventuresOfPrinceAchmed",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Nanook of the North",
+      "year": 1922,
+      "creator": "Robert J. Flaherty",
+      "identifier": "NanookOfTheNorth1922",
+      "category": "documentary",
+      "poster": "https://archive.org/services/img/NanookOfTheNorth1922",
+      "embed_url": "https://archive.org/embed/NanookOfTheNorth1922",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/NanookOfTheNorth1922",
+      "verified_at": "2026-03-09"
+    } ,  {
+      "title": "The Cabinet of Dr. Caligari",
+      "year": 1920,
+      "creator": "Robert Wiene",
+      "identifier": "TheCabinetOfDr.Caligari1920SilentMovieHorror",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/TheCabinetOfDr.Caligari1920SilentMovieHorror",
+      "embed_url": "https://archive.org/embed/TheCabinetOfDr.Caligari1920SilentMovieHorror",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/TheCabinetOfDr.Caligari1920SilentMovieHorror",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "From Morn to Midnight",
+      "year": 1920,
+      "creator": "Karlheinz Martin",
+      "identifier": "from-morn-to-midnight-1920-restored-720p-hd",
+      "category": "drama",
+      "poster": "https://archive.org/services/img/from-morn-to-midnight-1920-restored-720p-hd",
+      "embed_url": "https://archive.org/embed/from-morn-to-midnight-1920-restored-720p-hd",
+      "source": "Internet Archive",
+      "confidence_score": 95,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license"
+      ],
+      "source_page": "https://archive.org/details/from-morn-to-midnight-1920-restored-720p-hd",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "The Kid Brother",
+      "year": 1927,
+      "creator": "Ted Wilde & Harold Lloyd",
+      "identifier": "the-kid-brother_1927",
+      "category": "comedy",
+      "poster": "https://archive.org/services/img/the-kid-brother_1927",
+      "embed_url": "https://archive.org/embed/the-kid-brother_1927",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "copyright_expired_public_domain"
+      ],
+      "source_page": "https://archive.org/details/the-kid-brother_1927",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "The First Auto",
+      "year": 1927,
+      "creator": "Roy Del Ruth",
+      "identifier": "the-first-auto_1927",
+      "category": "action",
+      "poster": "https://archive.org/services/img/the-first-auto_1927",
+      "embed_url": "https://archive.org/embed/the-first-auto_1927",
+      "source": "Internet Archive",
+      "confidence_score": 90,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license"
+      ],
+      "source_page": "https://archive.org/details/the-first-auto_1927",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Oswald the Lucky Rabbit in: Trolley Troubles",
+      "year": 1927,
+      "creator": "Walt Disney & Ub Iwerks",
+      "identifier": "OswaldTheLuckyRabbitInTrolleyTroubles_201712",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/OswaldTheLuckyRabbitInTrolleyTroubles_201712",
+      "embed_url": "https://archive.org/embed/OswaldTheLuckyRabbitInTrolleyTroubles_201712",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license"
+      ],
+      "source_page": "https://archive.org/details/OswaldTheLuckyRabbitInTrolleyTroubles_201712",
+      "verified_at": "2026-03-09"
+    },  {
+      "title": "Oswald the Lucky Rabbit – All Wet",
+      "year": 1927,
+      "creator": "Walt Disney & Ub Iwerks",
+      "identifier": "AllWet1927Oswald",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/AllWet1927Oswald",
+      "embed_url": "https://archive.org/embed/AllWet1927Oswald",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "released_1927_public_domain_2023"
+      ],
+      "source_page": "https://archive.org/details/AllWet1927Oswald",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Felix the Cat – Felix Turns the Tide",
+      "year": 1922,
+      "creator": "Pat Sullivan & Otto Messmer",
+      "identifier": "FelixTheCat-FelixTurnsTheTide1922",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/FelixTheCat-FelixTurnsTheTide1922",
+      "embed_url": "https://archive.org/embed/FelixTheCat-FelixTurnsTheTide1922",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "public_domain_archive_entry",
+        "release_year_pre_1928"
+      ],
+      "source_page": "https://archive.org/details/FelixTheCat-FelixTurnsTheTide1922",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Felix the Cat – Felix Saves the Day",
+      "year": 1922,
+      "creator": "Pat Sullivan & Otto Messmer",
+      "identifier": "FelixTheCat-FelixSavesTheDay1922",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/FelixTheCat-FelixSavesTheDay1922",
+      "embed_url": "https://archive.org/embed/FelixTheCat-FelixSavesTheDay1922",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "public_domain_archive_entry",
+        "release_year_pre_1928"
+      ],
+      "source_page": "https://archive.org/details/FelixTheCat-FelixSavesTheDay1922",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Felix and the Beautiful Fatma",
+      "year": 1922,
+      "creator": "Pat Sullivan",
+      "identifier": "BillSpragueCollectionFelixAndTheBeautifulFatma-9.5mmPUBLICDOMAIN",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/BillSpragueCollectionFelixAndTheBeautifulFatma-9.5mmPUBLICDOMAIN",
+      "embed_url": "https://archive.org/embed/BillSpragueCollectionFelixAndTheBeautifulFatma-9.5mmPUBLICDOMAIN",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "public_domain_archive_entry",
+        "release_year_pre_1928"
+      ],
+      "source_page": "https://archive.org/details/BillSpragueCollectionFelixAndTheBeautifulFatma-9.5mmPUBLICDOMAIN",
+      "verified_at": "2026-03-09"
+    } , {
+      "title": "Felix In Hollywood",
+      "year": 1923,
+      "creator": "Otto Messmer & Pat Sullivan",
+      "identifier": "FelixInHollywood1923",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/FelixInHollywood1923",
+      "embed_url": "https://archive.org/embed/FelixInHollywood1923",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "public_domain_archive_entry",
+        "release_year_pre_1928"
+      ],
+      "source_page": "https://archive.org/details/FelixInHollywood1923",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Felix The Cat - Felix The Ghost Breaker",
+      "year": 1923,
+      "creator": "Otto Messmer & Pat Sullivan",
+      "identifier": "FelixTheCat-FelixTheGhostBreaker1923",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/FelixTheCat-FelixTheGhostBreaker1923",
+      "embed_url": "https://archive.org/embed/FelixTheCat-FelixTheGhostBreaker1923",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "public_domain_archive_entry",
+        "release_year_pre_1928"
+      ],
+      "source_page": "https://archive.org/details/FelixTheCat-FelixTheGhostBreaker1923",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Felix In Fairyland",
+      "year": 1923,
+      "creator": "Otto Messmer & Pat Sullivan",
+      "identifier": "FelixTheCat-FelixInFairyland1923",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/FelixTheCat-FelixInFairyland1923",
+      "embed_url": "https://archive.org/embed/FelixTheCat-FelixInFairyland1923",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "public_domain_archive_entry",
+        "release_year_pre_1928"
+      ],
+      "source_page": "https://archive.org/details/FelixTheCat-FelixInFairyland1923",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Felix Frolics At The Circus",
+      "year": 1920,
+      "creator": "Otto Messmer & Pat Sullivan",
+      "identifier": "FelixFrolicsAtTheCircus1920",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/FelixFrolicsAtTheCircus1920",
+      "embed_url": "https://archive.org/embed/FelixFrolicsAtTheCircus1920",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "public_domain_archive_entry",
+        "release_year_pre_1928"
+      ],
+      "source_page": "https://archive.org/details/FelixFrolicsAtTheCircus1920",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Felix The Cat - Felix Gets Broadcasted",
+      "year": 1923,
+      "creator": "Otto Messmer & Pat Sullivan",
+      "identifier": "FelixTheCat-FelixGetsBroadcasted1923",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/FelixTheCat-FelixGetsBroadcasted1923",
+      "embed_url": "https://archive.org/embed/FelixTheCat-FelixGetsBroadcasted1923",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "public_domain_archive_entry",
+        "release_year_pre_1928"
+      ],
+      "source_page": "https://archive.org/details/FelixTheCat-FelixGetsBroadcasted1923",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Felix: All Puzzled",
+      "year": 1924,
+      "creator": "Pat Sullivan",
+      "identifier": "Felix_AllPuzzled_NoAudio",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/Felix_AllPuzzled_NoAudio",
+      "embed_url": "https://archive.org/embed/Felix_AllPuzzled_NoAudio",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "copyright_expired",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/Felix_AllPuzzled_NoAudio",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Felix: Doubles For Darwin",
+      "year": 1924,
+      "creator": "Pat Sullivan",
+      "identifier": "Felix_DoublesforDarwin_NoAudio",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/Felix_DoublesforDarwin_NoAudio",
+      "embed_url": "https://archive.org/embed/Felix_DoublesforDarwin_NoAudio",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "copyright_expired",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/Felix_DoublesforDarwin_NoAudio",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Felix Finds Out",
+      "year": 1924,
+      "creator": "Pat Sullivan",
+      "identifier": "Felix_FindsOut_NoAudio",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/Felix_FindsOut_NoAudio",
+      "embed_url": "https://archive.org/embed/Felix_FindsOut_NoAudio",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "copyright_expired",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/Felix_FindsOut_NoAudio",
+      "verified_at": "2026-03-09"
+    } , {
+      "title": "Felix Goes West",
+      "year": 1924,
+      "creator": "Pat Sullivan",
+      "identifier": "Felix_GoesWest_NoAudio",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/Felix_GoesWest_NoAudio",
+      "embed_url": "https://archive.org/embed/Felix_GoesWest_NoAudio",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "copyright_expired",
+        "public_domain_archive_entry",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/Felix_GoesWest_NoAudio",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Felix Gets the Can",
+      "year": 1924,
+      "creator": "Pat Sullivan",
+      "identifier": "Felix_GetstheCan_NoAudio",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/Felix_GetstheCan_NoAudio",
+      "embed_url": "https://archive.org/embed/Felix_GetstheCan_NoAudio",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "copyright_expired",
+        "public_domain_archive_entry",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/Felix_GetstheCan_NoAudio",
+      "verified_at": "2026-03-09"
+    }, {
+      "title": "Oh Teacher (Oswald the Lucky Rabbit)",
+      "year": 1927,
+      "creator": "Walt Disney & Ub Iwerks",
+      "identifier": "Oswald_Oh_Teacher_1927",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/Oswald_Oh_Teacher_1927",
+      "embed_url": "https://archive.org/embed/Oswald_Oh_Teacher_1927",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "public_domain_due_to_expiration"
+      ],
+      "source_page": "https://archive.org/details/Oswald_Oh_Teacher_1927",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Neck 'N' Neck (Oswald the Lucky Rabbit)",
+      "year": 1928,
+      "creator": "Walt Disney & Ub Iwerks",
+      "identifier": "Neck_N_Neck_Oswald_1928",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/Neck_N_Neck_Oswald_1928",
+      "embed_url": "https://archive.org/embed/Neck_N_Neck_Oswald_1928",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "public_domain_due_to_expiration"
+      ],
+      "source_page": "https://archive.org/details/Neck_N_Neck_Oswald_1928",
+      "verified_at": "2026-03-09"
+    } , {
+      "title": "The Skeleton Dance",
+      "year": 1929,
+      "creator": "Walt Disney / Silly Symphonies",
+      "identifier": "The_Skeleton_Dance_1929",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/The_Skeleton_Dance_1929",
+      "embed_url": "https://archive.org/embed/The_Skeleton_Dance_1929",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1929",
+        "entered_public_domain_2025"
+      ],
+      "source_page": "https://archive.org/details/The_Skeleton_Dance_1929",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Plane Crazy",
+      "year": 1928,
+      "creator": "Walt Disney / Ub Iwerks",
+      "identifier": "Plane_Crazy_1928",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/Plane_Crazy_1928",
+      "embed_url": "https://archive.org/embed/Plane_Crazy_1928",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/Plane_Crazy_1928",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "The Gallopin' Gaucho",
+      "year": 1928,
+      "creator": "Walt Disney / Ub Iwerks",
+      "identifier": "The_Gallopin_Gaucho_1928",
+      "category": "kids",
+      "poster": "https://archive.org/services/img/The_Gallopin_Gaucho_1928",
+      "embed_url": "https://archive.org/embed/The_Gallopin_Gaucho_1928",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "entered_public_domain_2024"
+      ],
+      "source_page": "https://archive.org/details/The_Gallopin_Gaucho_1928",
+      "verified_at": "2026-03-09"
+    } , {
+      "title": "Night of the Living Dead",
+      "year": 1968,
+      "creator": "George A. Romero",
+      "identifier": "night-of-the-living-dead-1968-english",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/night-of-the-living-dead-1968-english",
+      "embed_url": "https://archive.org/embed/night-of-the-living-dead-1968-english",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "public_domain_mark"
+      ],
+      "source_page": "https://archive.org/details/night-of-the-living-dead-1968-english",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "White Zombie",
+      "year": 1932,
+      "creator": "Victor Halperin",
+      "identifier": "VictorHalperinsWhiteZombie1932",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/VictorHalperinsWhiteZombie1932",
+      "embed_url": "https://archive.org/embed/VictorHalperinsWhiteZombie1932",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "public_domain_mark"
+      ],
+      "source_page": "https://archive.org/details/VictorHalperinsWhiteZombie1932",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "The Amazing Mr. X",
+      "year": 1948,
+      "creator": "Bernard Vorhaus",
+      "identifier": "the.-amazing.-mr..-x.-1948",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/the.-amazing.-mr..-x.-1948",
+      "embed_url": "https://archive.org/embed/the.-amazing.-mr..-x.-1948",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "public_domain_mark"
+      ],
+      "source_page": "https://archive.org/details/the.-amazing.-mr..-x.-1948",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Orphans of the Storm",
+      "year": 1921,
+      "creator": "D.W. Griffith",
+      "identifier": "OrphansoftheStorm",
+      "category": "drama",
+      "poster": "https://archive.org/services/img/OrphansoftheStorm",
+      "embed_url": "https://archive.org/embed/OrphansoftheStorm",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/OrphansoftheStorm",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Post no Bills",
+      "year": 1896,
+      "creator": "Georges Méliès",
+      "identifier": "Post_no_Bills",
+      "category": "drama",
+      "poster": "https://archive.org/services/img/Post_no_Bills",
+      "embed_url": "https://archive.org/embed/Post_no_Bills",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/Post_no_Bills",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "The County Fair",
+      "year": 1920,
+      "creator": "Maurice Tourneur",
+      "identifier": "CountyFair_",
+      "category": "drama",
+      "poster": "https://archive.org/services/img/CountyFair_",
+      "embed_url": "https://archive.org/embed/CountyFair_",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/CountyFair_",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Every Man His Own Cigar Lighter",
+      "year": 1903,
+      "creator": "Georges Méliès",
+      "identifier": "Every.Man.His.Own.Cigar.Lighter",
+      "category": "drama",
+      "poster": "https://archive.org/services/img/Every.Man.His.Own.Cigar.Lighter",
+      "embed_url": "https://archive.org/embed/Every.Man.His.Own.Cigar.Lighter",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/Every.Man.His.Own.Cigar.Lighter",
+      "verified_at": "2026-03-09"
+    } ,  {
+      "title": "The Cabinet of Dr. Caligari",
+      "year": 1920,
+      "creator": "Robert Wiene",
+      "identifier": "TheCabinetOfDr.Caligari1920SilentMovieHorror",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/TheCabinetOfDr.Caligari1920SilentMovieHorror",
+      "embed_url": "https://archive.org/embed/TheCabinetOfDr.Caligari1920SilentMovieHorror",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/TheCabinetOfDr.Caligari1920SilentMovieHorror",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Nosferatu: A Symphony of Horror",
+      "year": 1922,
+      "creator": "F.W. Murnau",
+      "identifier": "nosferatu-1922_202504",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/nosferatu-1922_202504",
+      "embed_url": "https://archive.org/embed/nosferatu-1922_202504",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license"
+      ],
+      "source_page": "https://archive.org/details/nosferatu-1922_202504",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "The Phantom of the Opera",
+      "year": 1925,
+      "creator": "Rupert Julian",
+      "identifier": "ThePhantomOfTheOpera1925",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/ThePhantomOfTheOpera1925",
+      "embed_url": "https://archive.org/embed/ThePhantomOfTheOpera1925",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "copyright_not_renewed"
+      ],
+      "source_page": "https://archive.org/details/ThePhantomOfTheOpera1925",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Dr. Jekyll and Mr. Hyde",
+      "year": 1920,
+      "creator": "John S. Robertson",
+      "identifier": "Dr_Jekyll_and_Mr_Hyde_1920",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/Dr_Jekyll_and_Mr_Hyde_1920",
+      "embed_url": "https://archive.org/embed/Dr_Jekyll_and_Mr_Hyde_1920",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928"
+      ],
+      "source_page": "https://archive.org/details/Dr_Jekyll_and_Mr_Hyde_1920",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "The Unknown",
+      "year": 1927,
+      "creator": "Tod Browning",
+      "identifier": "TheUnknown1927",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/TheUnknown1927",
+      "embed_url": "https://archive.org/embed/TheUnknown1927",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/TheUnknown1927",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "The Golem: How He Came into the World",
+      "year": 1920,
+      "creator": "Paul Wegener & Carl Boese",
+      "identifier": "Golem1920",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/Golem1920",
+      "embed_url": "https://archive.org/embed/Golem1920",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/Golem1920",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Häxan (Witchcraft Through the Ages)",
+      "year": 1922,
+      "creator": "Benjamin Christensen",
+      "identifier": "Haxan1922",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/Haxan1922",
+      "embed_url": "https://archive.org/embed/Haxan1922",
+      "source": "Internet Archive",
+      "confidence_score": 98,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/Haxan1922",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "The Cat and the Canary",
+      "year": 1927,
+      "creator": "Paul Leni",
+      "identifier": "TheCatAndTheCanary1927",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/TheCatAndTheCanary1927",
+      "embed_url": "https://archive.org/embed/TheCatAndTheCanary1927",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "public_domain_label"
+      ],
+      "source_page": "https://archive.org/details/TheCatAndTheCanary1927",
+      "verified_at": "2026-03-09"
+    } , {
+      "title": "Dr. Jekyll and Mr. Hyde",
+      "year": 1912,
+      "creator": "Lucius Henderson",
+      "identifier": "Dr.JekyllAndMr.Hyde1912_201312",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/Dr.JekyllAndMr.Hyde1912_201312",
+      "embed_url": "https://archive.org/embed/Dr.JekyllAndMr.Hyde1912_201312",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": ["release_year_pre_1928", "silent_film_public_domain"],
+      "source_page": "https://archive.org/details/Dr.JekyllAndMr.Hyde1912_201312",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Dr Jekyll and Mr Hyde",
+      "year": 1913,
+      "creator": "William King Baggot",
+      "identifier": "DrJekyllAndMrHyde1913",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/DrJekyllAndMrHyde1913",
+      "embed_url": "https://archive.org/embed/DrJekyllAndMrHyde1913",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": ["release_year_pre_1928", "public_domain_mark"],
+      "source_page": "https://archive.org/details/DrJekyllAndMrHyde1913",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "The Bat",
+      "year": 1926,
+      "creator": "Roland West (silent)",
+      "identifier": "TheBat1926Silent",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/TheBat1926Silent",
+      "embed_url": "https://archive.org/embed/TheBat1926Silent",
+      "source": "Internet Archive",
+      "confidence_score": 90,
+      "public_domain_evidence": ["release_year_pre_1928", "silent_film_public_domain"],
+      "source_page": "https://archive.org/details/TheBat1926Silent",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "The Fall of the House of Usher",
+      "year": 1928,
+      "creator": "James Sibley Watson & Melville Webber",
+      "identifier": "FallOfHouseUsher1928",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/FallOfHouseUsher1928",
+      "embed_url": "https://archive.org/embed/FallOfHouseUsher1928",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": ["release_year_pre_1928", "trusted_collection"],
+      "source_page": "https://archive.org/details/FallOfHouseUsher1928",
+      "verified_at": "2026-03-09"
+    } ,  {
+      "title": "The Sheik",
+      "year": 1921,
+      "creator": "George Melford",
+      "identifier": "TheSheik1921",
+      "category": "romance",
+      "poster": "https://archive.org/services/img/TheSheik1921",
+      "embed_url": "https://archive.org/embed/TheSheik1921",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": ["release_year_pre_1928", "trusted_collection"],
+      "source_page": "https://archive.org/details/TheSheik1921",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Way Down East",
+      "year": 1920,
+      "creator": "D.W. Griffith",
+      "identifier": "WayDownEast1920",
+      "category": "romance",
+      "poster": "https://archive.org/services/img/WayDownEast1920",
+      "embed_url": "https://archive.org/embed/WayDownEast1920",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": ["release_year_pre_1928", "trusted_collection"],
+      "source_page": "https://archive.org/details/WayDownEast1920",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Hearts Adrift",
+      "year": 1914,
+      "creator": "Émile Chautard",
+      "identifier": "HeartsAdrift1914",
+      "category": "romance",
+      "poster": "https://archive.org/services/img/HeartsAdrift1914",
+      "embed_url": "https://archive.org/embed/HeartsAdrift1914",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": ["release_year_pre_1928", "trusted_collection"],
+      "source_page": "https://archive.org/details/HeartsAdrift1914",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Carmen",
+      "year": 1915,
+      "creator": "Raoul Walsh",
+      "identifier": "Carmen1915",
+      "category": "romance",
+      "poster": "https://archive.org/services/img/Carmen1915",
+      "embed_url": "https://archive.org/embed/Carmen1915",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": ["release_year_pre_1928", "trusted_collection"],
+      "source_page": "https://archive.org/details/Carmen1915",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Broken Blossoms",
+      "year": 1919,
+      "creator": "D.W. Griffith",
+      "identifier": "BrokenBlossoms1919",
+      "category": "romance",
+      "poster": "https://archive.org/services/img/BrokenBlossoms1919",
+      "embed_url": "https://archive.org/embed/BrokenBlossoms1919",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": ["release_year_pre_1928", "trusted_collection"],
+      "source_page": "https://archive.org/details/BrokenBlossoms1919",
+      "verified_at": "2026-03-09"
+    } ,  {
+      "title": "Charade",
+      "year": 1963,
+      "creator": "Stanley Donen",
+      "identifier": "Charade-1963",
+      "category": "romance",
+      "poster": "https://archive.org/services/img/1963-charade",
+      "embed_url": "https://archive.org/embed/1963-charade",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "defective_copyright_notice",
+        "public_domain_claims_in_multiple_sources"
+      ],
+      "source_page": "https://archive.org/details/1963-charade",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Carnival of Souls",
+      "year": 1962,
+      "creator": "Herk Harvey",
+      "identifier": "Carnival_of_Souls_1962",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/Carnival_of_Souls_1962",
+      "embed_url": "https://archive.org/embed/Carnival_of_Souls_1962",
+      "source": "Internet Archive",
+      "confidence_score": 95,
+      "public_domain_evidence": [
+        "copyright_not_renewed_or_missing_notice",
+        "public_domain_remarks_in_copyright_logs"
+      ],
+      "source_page": "https://archive.org/details/Carnival_of_Souls_1962",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "The Brain That Wouldn't Die",
+      "year": 1962,
+      "creator": "Joseph Green",
+      "identifier": "brain_that_wouldnt_die",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/brain_that_wouldnt_die",
+      "embed_url": "https://archive.org/embed/brain_that_wouldnt_die",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "defective_or_missing_notice",
+        "public_domain_mark_on_media_files"
+      ],
+      "source_page": "https://archive.org/details/brain_that_wouldnt_die",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Plan 9 from Outer Space",
+      "year": 1959,
+      "creator": "Ed Wood",
+      "identifier": "plan_9_from_outer_space",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/plan_9_from_outer_space",
+      "embed_url": "https://archive.org/embed/plan_9_from_outer_space",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "widely_listed_public_domain",
+        "public_domain_collections"
+      ],
+      "source_page": "https://archive.org/details/plan_9_from_outer_space",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "The Killer Shrews",
+      "year": 1959,
+      "creator": "R.G. Springsteen",
+      "identifier": "the_killer_shrews",
+      "category": "horror",
+      "poster": "https://archive.org/services/img/the_killer_shrews",
+      "embed_url": "https://archive.org/embed/the_killer_shrews",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "common_public_domain_listing",
+        "public_domain_movie_indexes"
+      ],
+      "source_page": "https://archive.org/details/the_killer_shrews",
+      "verified_at": "2026-03-09"
     }
   ]
 }

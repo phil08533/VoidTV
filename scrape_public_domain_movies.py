@@ -375,7 +375,7 @@ class ArchiveScraper:
         total_fetched = 0
         empty_pages = 0
 
-        MAX_EMPTY_PAGES = 10      # tolerate temporary outages
+        MAX_EMPTY_PAGES = 100      # tolerate temporary outages
         MAX_PAGES = 50000         # practical upper bound for multi-day runs
 
         while page <= MAX_PAGES:
