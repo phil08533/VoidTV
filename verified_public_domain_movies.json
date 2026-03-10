@@ -317,8 +317,8 @@
       "creator": "Georges Méliès",
       "identifier": "A_Trip_to_the_Moon",
       "category": "scifi",
-      "poster": "https://archive.org/services/img/A_Trip_to_the_Moon",
-      "embed_url": "https://archive.org/embed/A_Trip_to_the_Moon",
+      "poster": "https://archive.org/services/img/a-trip-to-the-moon-1902-colorized",
+      "embed_url": "https://archive.org/details/a-trip-to-the-moon-1902-colorized",
       "source": "Internet Archive",
       "confidence_score": 100,
       "public_domain_evidence": [
@@ -353,8 +353,8 @@
       "creator": "John S. Robertson",
       "identifier": "Dr_Jekyll_and_Mr_Hyde_1920",
       "category": "horror",
-      "poster": "https://archive.org/services/img/Dr_Jekyll_and_Mr_Hyde_1920",
-      "embed_url": "https://archive.org/embed/Dr_Jekyll_and_Mr_Hyde_1920",
+      "poster": "https://archive.org/services/img/dr.-jekyll-and-mr.-hyde-1920_202504",
+      "embed_url": "https://archive.org/details/dr.-jekyll-and-mr.-hyde-1920_202504",
       "source": "Internet Archive",
       "confidence_score": 100,
       "public_domain_evidence": [
@@ -676,17 +676,17 @@
       "title": "Felix: All Puzzled",
       "year": 1924,
       "creator": "Pat Sullivan",
-      "identifier": "Felix_AllPuzzled_NoAudio",
+      "identifier": "silent-felix-all-puzzled",
       "category": "kids",
-      "poster": "https://archive.org/services/img/Felix_AllPuzzled_NoAudio",
-      "embed_url": "https://archive.org/embed/Felix_AllPuzzled_NoAudio",
+      "poster": "https://archive.org/services/img/silent-felix-all-puzzled",
+      "embed_url": "https://archive.org/details/silent-felix-all-puzzled",
       "source": "Internet Archive",
       "confidence_score": 100,
       "public_domain_evidence": [
         "copyright_expired",
         "trusted_collection"
       ],
-      "source_page": "https://archive.org/details/Felix_AllPuzzled_NoAudio",
+      "source_page": "https://archive.org/details/silent-felix-all-puzzled",
       "verified_at": "2026-03-09"
     },
     {
@@ -778,33 +778,33 @@
       "title": "Neck 'N' Neck (Oswald the Lucky Rabbit)",
       "year": 1928,
       "creator": "Walt Disney & Ub Iwerks",
-      "identifier": "Neck_N_Neck_Oswald_1928",
+      "identifier": "oswald-the-lucky-rabbit-neck-n-neck-1928",
       "category": "kids",
-      "poster": "https://archive.org/services/img/Neck_N_Neck_Oswald_1928",
-      "embed_url": "https://archive.org/embed/Neck_N_Neck_Oswald_1928",
+      "poster": "https://archive.org/services/img/oswald-the-lucky-rabbit-neck-n-neck-1928",
+      "embed_url": "https://archive.org/details/oswald-the-lucky-rabbit-neck-n-neck-1928",
       "source": "Internet Archive",
       "confidence_score": 100,
       "public_domain_evidence": [
         "release_year_pre_1928",
         "public_domain_due_to_expiration"
       ],
-      "source_page": "https://archive.org/details/Neck_N_Neck_Oswald_1928",
+      "source_page": "https://archive.org/details/oswald-the-lucky-rabbit-neck-n-neck-1928",
       "verified_at": "2026-03-09"
     } , {
       "title": "The Skeleton Dance",
       "year": 1929,
       "creator": "Walt Disney / Silly Symphonies",
-      "identifier": "The_Skeleton_Dance_1929",
+      "identifier": "the-skeleton-dance_1929",
       "category": "kids",
-      "poster": "https://archive.org/services/img/The_Skeleton_Dance_1929",
-      "embed_url": "https://archive.org/embed/The_Skeleton_Dance_1929",
+      "poster": "https://archive.org/services/img/the-skeleton-dance_1929",
+      "embed_url": "https://archive.org/details/the-skeleton-dance_1929",
       "source": "Internet Archive",
       "confidence_score": 100,
       "public_domain_evidence": [
         "release_year_pre_1929",
         "entered_public_domain_2025"
       ],
-      "source_page": "https://archive.org/details/The_Skeleton_Dance_1929",
+      "source_page": "https://archive.org/details/the-skeleton-dance_1929",
       "verified_at": "2026-03-09"
     },
     {
@@ -828,17 +828,17 @@
       "title": "The Gallopin' Gaucho",
       "year": 1928,
       "creator": "Walt Disney / Ub Iwerks",
-      "identifier": "The_Gallopin_Gaucho_1928",
+      "identifier": "the-gallopin-gaucho-1928",
       "category": "kids",
-      "poster": "https://archive.org/services/img/The_Gallopin_Gaucho_1928",
-      "embed_url": "https://archive.org/embed/The_Gallopin_Gaucho_1928",
+      "poster": "https://archive.org/services/img/the-gallopin-gaucho-1928",
+      "embed_url": "https://archive.org/details/the-gallopin-gaucho-1928",
       "source": "Internet Archive",
       "confidence_score": 100,
       "public_domain_evidence": [
         "release_year_pre_1928",
         "entered_public_domain_2024"
       ],
-      "source_page": "https://archive.org/details/The_Gallopin_Gaucho_1928",
+      "source_page": "https://archive.org/details/the-gallopin-gaucho-1928",
       "verified_at": "2026-03-09"
     } , {
       "title": "Night of the Living Dead",
@@ -1032,8 +1032,8 @@
       "creator": "Tod Browning",
       "identifier": "TheUnknown1927",
       "category": "horror",
-      "poster": "https://archive.org/services/img/TheUnknown1927",
-      "embed_url": "https://archive.org/embed/TheUnknown1927",
+      "poster": "https://archive.org/services/img/sub-115-mb-test-to-see-if-it-can-get-through-the-beta-uploader",
+      "embed_url": "https://archive.org/details/sub-115-mb-test-to-see-if-it-can-get-through-the-beta-uploader",
       "source": "Internet Archive",
       "confidence_score": 100,
       "public_domain_evidence": [
@@ -1049,8 +1049,8 @@
       "creator": "Paul Wegener & Carl Boese",
       "identifier": "Golem1920",
       "category": "horror",
-      "poster": "https://archive.org/services/img/Golem1920",
-      "embed_url": "https://archive.org/embed/Golem1920",
+      "poster": "https://archive.org/services/img/the-golem-how-he-came-into-the-world-full-movie-restored-720p-hd",
+      "embed_url": "https://archive.org/details/the-golem-how-he-came-into-the-world-full-movie-restored-720p-hd",
       "source": "Internet Archive",
       "confidence_score": 100,
       "public_domain_evidence": [
@@ -1124,15 +1124,15 @@
     {
       "title": "The Bat",
       "year": 1926,
-      "creator": "Roland West (silent)",
-      "identifier": "TheBat1926Silent",
+      "creator": "Roland West",
+      "identifier": "TheBat1926",
       "category": "horror",
-      "poster": "https://archive.org/services/img/TheBat1926Silent",
-      "embed_url": "https://archive.org/embed/TheBat1926Silent",
+      "poster": "https://archive.org/services/img/TheBat1926",
+      "embed_url": "https://archive.org/embed/TheBat1926",
       "source": "Internet Archive",
       "confidence_score": 90,
       "public_domain_evidence": ["release_year_pre_1928", "silent_film_public_domain"],
-      "source_page": "https://archive.org/details/TheBat1926Silent",
+      "source_page": "https://archive.org/details/TheBat1926",
       "verified_at": "2026-03-09"
     },
     {
@@ -1141,12 +1141,12 @@
       "creator": "James Sibley Watson & Melville Webber",
       "identifier": "FallOfHouseUsher1928",
       "category": "horror",
-      "poster": "https://archive.org/services/img/FallOfHouseUsher1928",
-      "embed_url": "https://archive.org/embed/FallOfHouseUsher1928",
+      "poster": "https://archive.org/services/img/TheFallOfTheHouseOfUsher1928",
+      "embed_url": "https://archive.org/details/TheFallOfTheHouseOfUsher1928",
       "source": "Internet Archive",
       "confidence_score": 100,
       "public_domain_evidence": ["release_year_pre_1928", "trusted_collection"],
-      "source_page": "https://archive.org/details/FallOfHouseUsher1928",
+      "source_page": "https://archive.org/details/TheFallOfTheHouseOfUsher1928",
       "verified_at": "2026-03-09"
     } ,  {
       "title": "The Sheik",
@@ -1166,56 +1166,43 @@
       "title": "Way Down East",
       "year": 1920,
       "creator": "D.W. Griffith",
-      "identifier": "WayDownEast1920",
+      "identifier": "WayDownEast_201312",
       "category": "romance",
-      "poster": "https://archive.org/services/img/WayDownEast1920",
-      "embed_url": "https://archive.org/embed/WayDownEast1920",
+      "poster": "https://archive.org/services/img/WayDownEast_201312",
+      "embed_url": "https://archive.org/details/WayDownEast_201312",
       "source": "Internet Archive",
       "confidence_score": 100,
       "public_domain_evidence": ["release_year_pre_1928", "trusted_collection"],
-      "source_page": "https://archive.org/details/WayDownEast1920",
+      "source_page": "https://archive.org/details/WayDownEast_201312",
       "verified_at": "2026-03-09"
     },
-    {
-      "title": "Hearts Adrift",
-      "year": 1914,
-      "creator": "Émile Chautard",
-      "identifier": "HeartsAdrift1914",
-      "category": "romance",
-      "poster": "https://archive.org/services/img/HeartsAdrift1914",
-      "embed_url": "https://archive.org/embed/HeartsAdrift1914",
-      "source": "Internet Archive",
-      "confidence_score": 100,
-      "public_domain_evidence": ["release_year_pre_1928", "trusted_collection"],
-      "source_page": "https://archive.org/details/HeartsAdrift1914",
-      "verified_at": "2026-03-09"
-    },
+
     {
       "title": "Carmen",
       "year": 1915,
       "creator": "Raoul Walsh",
-      "identifier": "Carmen1915",
+      "identifier": "CarmenCBD",
       "category": "romance",
-      "poster": "https://archive.org/services/img/Carmen1915",
-      "embed_url": "https://archive.org/embed/Carmen1915",
+      "poster": "https://archive.org/services/img/CarmenCBD",
+      "embed_url": "https://archive.org/details/CarmenCBD",
       "source": "Internet Archive",
       "confidence_score": 100,
       "public_domain_evidence": ["release_year_pre_1928", "trusted_collection"],
-      "source_page": "https://archive.org/details/Carmen1915",
+      "source_page": "https://archive.org/details/CarmenCBD",
       "verified_at": "2026-03-09"
     },
     {
       "title": "Broken Blossoms",
       "year": 1919,
       "creator": "D.W. Griffith",
-      "identifier": "BrokenBlossoms1919",
+      "identifier": "BrokenBlossoms",
       "category": "romance",
-      "poster": "https://archive.org/services/img/BrokenBlossoms1919",
-      "embed_url": "https://archive.org/embed/BrokenBlossoms1919",
+      "poster": "https://archive.org/services/img/BrokenBlossoms",
+      "embed_url": "https://archive.org/embed/BrokenBlossoms",
       "source": "Internet Archive",
       "confidence_score": 100,
       "public_domain_evidence": ["release_year_pre_1928", "trusted_collection"],
-      "source_page": "https://archive.org/details/BrokenBlossoms1919",
+      "source_page": "https://archive.org/details/BrokenBlossoms",
       "verified_at": "2026-03-09"
     } ,  {
       "title": "Charade",
@@ -1238,17 +1225,17 @@
       "title": "Carnival of Souls",
       "year": 1962,
       "creator": "Herk Harvey",
-      "identifier": "Carnival_of_Souls_1962",
+      "identifier": "carnivalofsouls_201907",
       "category": "horror",
-      "poster": "https://archive.org/services/img/Carnival_of_Souls_1962",
-      "embed_url": "https://archive.org/embed/Carnival_of_Souls_1962",
+      "poster": "https://archive.org/services/img/carnivalofsouls_201907",
+      "embed_url": "https://archive.org/details/carnivalofsouls_201907",
       "source": "Internet Archive",
       "confidence_score": 95,
       "public_domain_evidence": [
         "copyright_not_renewed_or_missing_notice",
         "public_domain_remarks_in_copyright_logs"
       ],
-      "source_page": "https://archive.org/details/Carnival_of_Souls_1962",
+      "source_page": "https://archive.org/details/carnivalofsouls_201907",
       "verified_at": "2026-03-09"
     },
     {
@@ -1272,17 +1259,17 @@
       "title": "Plan 9 from Outer Space",
       "year": 1959,
       "creator": "Ed Wood",
-      "identifier": "plan_9_from_outer_space",
+      "identifier": "plan-94-k",
       "category": "horror",
-      "poster": "https://archive.org/services/img/plan_9_from_outer_space",
-      "embed_url": "https://archive.org/embed/plan_9_from_outer_space",
+      "poster": "https://archive.org/services/img/plan-94-k",
+      "embed_url": "https://archive.org/details/plan-94-k",
       "source": "Internet Archive",
       "confidence_score": 100,
       "public_domain_evidence": [
         "widely_listed_public_domain",
         "public_domain_collections"
       ],
-      "source_page": "https://archive.org/details/plan_9_from_outer_space",
+      "source_page": "https://archive.org/details/plan-94-k",
       "verified_at": "2026-03-09"
     },
     {
@@ -1291,15 +1278,15 @@
       "creator": "R.G. Springsteen",
       "identifier": "the_killer_shrews",
       "category": "horror",
-      "poster": "https://archive.org/services/img/the_killer_shrews",
-      "embed_url": "https://archive.org/embed/the_killer_shrews",
+      "poster": "https://archive.org/services/img/The_Killer_Shrews",
+      "embed_url": "https://archive.org/details/The_Killer_Shrews",
       "source": "Internet Archive",
       "confidence_score": 100,
       "public_domain_evidence": [
         "common_public_domain_listing",
         "public_domain_movie_indexes"
       ],
-      "source_page": "https://archive.org/details/the_killer_shrews",
+      "source_page": "https://archive.org/details/The_Killer_Shrews",
       "verified_at": "2026-03-09"
     }
   ]
