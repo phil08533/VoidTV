@@ -531,35 +531,39 @@ class ArchiveScraper:
 
     # ------------------------------------------------------------------
     def run(self) -> None:
-        log.info("Starting Internet Archive scrape…")
-        page = 1
-        total_fetched = 0
+        log.info("Starting multi-run Internet Archive scrape…")
 
-        while True:
-            docs = self._fetch_page(page)
-            if not docs:
-                break
+        for run_index in range(4000):  # repeat 4 times
+            log.info("=== Run %d ===", run_index + 1)
 
-            for item in docs:
-                self._process_item(item)
+            page = 3
+            total_fetched = 0
 
-            total_fetched += len(docs)
+            while True:
+                docs = self._fetch_page(page)
+                if not docs:
+                    break
+
+                for item in docs:
+                    self._process_item(item)
+
+                total_fetched += len(docs)
+                log.info(
+                    "Progress — fetched: %d | accepted: %d | rejected: %d",
+                    total_fetched, len(self.accepted), len(self.rejected)
+                )
+
+                if len(docs) < ROWS_PER_PAGE:
+                    break
+
+                page += 1
+                time.sleep(1)
+
             log.info(
-                "Progress — fetched: %d | accepted: %d | rejected: %d",
-                total_fetched, len(self.accepted), len(self.rejected)
+                "Run %d complete — accepted: %d | rejected: %d",
+                run_index + 1, len(self.accepted), len(self.rejected)
             )
-
-            if len(docs) < ROWS_PER_PAGE:
-                break  # Last page
-
-            page += 1
-            time.sleep(1)  # Polite crawl delay
-
-        log.info(
-            "Scrape complete — accepted: %d | rejected: %d",
-            len(self.accepted), len(self.rejected)
-        )
-        self._log_rejection_summary()
+            self._log_rejection_summary()
 
     # ------------------------------------------------------------------
     def _log_rejection_summary(self) -> None:
