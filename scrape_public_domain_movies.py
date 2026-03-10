@@ -22,6 +22,8 @@ import logging
 import requests
 import urllib.parse
 from datetime import date, datetime, timezone
+import random
+
 
 # ---------------------------------------------------------------------------
 # Logging
@@ -339,14 +341,19 @@ def should_reject(title: str, year, creator: str, collection: str,
 
 class ArchiveScraper:
     QUERY = (
-        "(mediatype:movies) AND ("
-        "licenseurl:*publicdomain* "
-        "OR licenseurl:*creativecommons.org/publicdomain* "
-        "OR subject:\"public domain\" "
-        "OR collection:prelinger "
-        "OR collection:silent_films"
-        ")"
-    )
+    '(mediatype:movies) AND ('
+    'licenseurl:"http://creativecommons.org/publicdomain/zero/1.0/" '
+    'OR licenseurl:"https://creativecommons.org/publicdomain/zero/1.0/" '
+    'OR licenseurl:"publicdomain" '
+    'OR collection:prelinger '
+    'OR collection:feature_films '
+    'OR collection:moviesandfilms '
+    'OR collection:classic_tv '
+    'OR collection:ephemera '
+    'OR collection:animationandcartoons '
+    'OR collection:filmcollectorsarchive '
+    ')'
+)
     FIELDS = ["identifier", "title", "year", "creator", "collection",
               "licenseurl", "subject"]
 
@@ -361,6 +368,27 @@ class ArchiveScraper:
         self._seen_keys: set[str] = set()
 
     # ------------------------------------------------------------------
+    def _save_progress(self, page: int) -> None:
+        """Save the last successfully scraped page number."""
+        try:
+            with open("scrape_progress.txt", "w", encoding="utf-8") as f:
+                f.write(str(page))
+            log.info("Saved progress — page %d", page)
+        except Exception as e:
+            log.error("Failed to save progress: %s", e)
+
+    def _load_progress(self) -> int | None:
+        """Load the last scraped page number, or None if not available."""
+        try:
+            with open("scrape_progress.txt", "r", encoding="utf-8") as f:
+                value = f.read().strip()
+                return int(value) if value else None
+        except FileNotFoundError:
+            return None
+        except Exception as e:
+            log.error("Failed to load progress: %s", e)
+            return None
+
     def _item_accessible(self, identifier: str) -> bool:
         """
         Verify the item actually exists and is publicly accessible on
@@ -531,40 +559,75 @@ class ArchiveScraper:
 
     # ------------------------------------------------------------------
     def run(self) -> None:
-        log.info("Starting multi-run Internet Archive scrape…")
+        log.info("Starting Internet Archive scrape…")
 
-        for run_index in range(4000):  # repeat 4 times
-            log.info("=== Run %d ===", run_index + 1)
+        # Resume if possible
+        page = self._load_progress() or 1
+        total_fetched = 0
+        empty_pages = 0
 
-            page = 3
-            total_fetched = 0
+        MAX_EMPTY_PAGES = 10      # tolerate temporary outages
+        MAX_PAGES = 50000         # practical upper bound for multi-day runs
 
-            while True:
-                docs = self._fetch_page(page)
-                if not docs:
+        while page <= MAX_PAGES:
+            log.info("Fetching page %d…", page)
+            docs = self._fetch_page(page)
+
+            # Handle empty or failed pages
+            if not docs:
+                empty_pages += 1
+                log.warning("Page %d returned no results (%d/%d)", 
+                            page, empty_pages, MAX_EMPTY_PAGES)
+
+                if empty_pages >= MAX_EMPTY_PAGES:
+                    log.error("Too many empty pages — stopping.")
                     break
 
-                for item in docs:
-                    self._process_item(item)
-
-                total_fetched += len(docs)
-                log.info(
-                    "Progress — fetched: %d | accepted: %d | rejected: %d",
-                    total_fetched, len(self.accepted), len(self.rejected)
-                )
-
-                if len(docs) < ROWS_PER_PAGE:
-                    break
-
+                # Try next page anyway
                 page += 1
-                time.sleep(1)
+                self._save_progress(page)
+                time.sleep(random.uniform(30, 90))
+                continue
 
+            # Reset empty counter on success
+            empty_pages = 0
+
+            # Process items
+            for item in docs:
+                self._process_item(item)
+
+            total_fetched += len(docs)
             log.info(
-                "Run %d complete — accepted: %d | rejected: %d",
-                run_index + 1, len(self.accepted), len(self.rejected)
+                "Progress — fetched: %d | accepted: %d | rejected: %d",
+                total_fetched, len(self.accepted), len(self.rejected)
             )
-            self._log_rejection_summary()
 
+            # Save progress every page
+            self._save_progress(page)
+
+            # If Archive returns fewer than expected rows, likely end of dataset
+            if len(docs) < ROWS_PER_PAGE:
+                log.info("Reached final partial page — stopping.")
+                break
+
+            # Next page
+            page += 1
+
+            # Polite randomized delay to avoid rate limits
+            time.sleep(random.uniform(45, 120))
+
+        log.info(
+            "Scrape complete — accepted: %d | rejected: %d",
+            len(self.accepted), len(self.rejected)
+        )
+        self._log_rejection_summary()
+
+
+        log.info(
+            "Scrape complete — accepted: %d | rejected: %d",
+            len(self.accepted), len(self.rejected)
+        )
+        self._log_rejection_summary()
     # ------------------------------------------------------------------
     def _log_rejection_summary(self) -> None:
         reasons: dict[str, int] = {}
