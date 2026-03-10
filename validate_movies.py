@@ -70,63 +70,69 @@ def check_identifier(identifier: str) -> tuple[bool, str]:
 
 
 def validate(input_file: str, dry_run: bool) -> None:
-    with open(input_file, encoding="utf-8") as f:
-        data = json.load(f)
+        with open(input_file, encoding="utf-8") as f:
+            data = json.load(f)
 
-    # Load existing movies into a dict keyed by identifier (prevents duplicates)
-    existing = {m["identifier"]: m for m in data.get("movies", [])}
-    movies = list(existing.values())
+        # Load existing movies into a dict keyed by identifier (prevents duplicates)
+        existing: dict[str, dict] = {
+            m["identifier"]: m for m in data.get("movies", [])
+        }
 
-    log.info("Checking %d movies in %s…", len(movies), input_file)
+        movies = list(existing.values())
+        log.info("Checking %d movies in %s…", len(movies), input_file)
 
-    dead: list[dict] = []
+        dead: list[dict] = []
 
-    for i, movie in enumerate(movies, 1):
-        identifier = movie.get("identifier", "")
-        title = movie.get("title", "?")
-        log.info("[%d/%d] %s  →  %s", i, len(movies), identifier, title)
+        for i, movie in enumerate(movies, 1):
+            identifier = movie.get("identifier", "")
+            title = movie.get("title", "?")
+            log.info("[%d/%d] %s  →  %s", i, len(movies), identifier, title)
 
-        accessible, reason = check_identifier(identifier)
-        if accessible:
-            log.info("  ✓  %s", reason)
-            existing[identifier] = movie  # update/keep
-        else:
-            log.warning("  ✗  %s", reason)
-            dead.append({"identifier": identifier, "title": title, "reason": reason})
-            existing.pop(identifier, None)  # remove dead items
+            accessible, reason = check_identifier(identifier)
+            if accessible:
+                log.info("  ✓  %s", reason)
+                existing[identifier] = movie  # keep/update
+            else:
+                log.warning("  ✗  %s", reason)
+                dead.append({
+                    "identifier": identifier,
+                    "title": title,
+                    "reason": reason
+                })
+                existing.pop(identifier, None)  # remove dead
 
-        time.sleep(0.3)
+            time.sleep(0.3)
 
-    # Summary
-    print("\n" + "=" * 60)
-    print(f"RESULTS: {len(existing)} accessible, {len(dead)} dead/missing")
-    if dead:
-        print("\nDead items:")
-        for d in dead:
-            print(f"  {d['identifier']:40s}  {d['reason']}")
-    print("=" * 60 + "\n")
+        # ---- Summary ----
+        print("\n" + "=" * 60)
+        print(f"RESULTS: {len(existing)} accessible, {len(dead)} dead/missing")
+        if dead:
+            print("\nDead items:")
+            for d in dead:
+                print(f"  {d['identifier']:40s}  {d['reason']}")
+        print("=" * 60 + "\n")
 
-    if dry_run:
-        log.info("Dry-run mode — no changes written.")
-        return
+        if dry_run:
+            log.info("Dry-run mode — no changes written.")
+            return
 
-    # Save merged list (append new, remove dead, no duplicates)
-    merged = list(existing.values())
-    data["movies"] = merged
-    data["total_movies"] = len(merged)
+        # ---- Write merged file (append new, remove dead, no duplicates) ----
+        merged = list(existing.values())
+        data["movies"] = merged
+        data["total_movies"] = len(merged)
 
-    # Recompute category counts
-    counts = {}
-    for m in merged:
-        cat = m.get("category", "drama")
-        counts[cat] = counts.get(cat, 0) + 1
-    data["category_counts"] = counts
+        # Recompute category counts
+        counts: dict[str, int] = {}
+        for m in merged:
+            cat = m.get("category", "drama")
+            counts[cat] = counts.get(cat, 0) + 1
+        data["category_counts"] = counts
 
-    with open(input_file, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        with open(input_file, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
 
-    log.info("Saved cleaned file: %d movies kept → %s",
-             len(merged), input_file)
+        log.info("Saved cleaned file: %d movies kept → %s",
+                len(merged), input_file)
 
 
 # ---------------------------------------------------------------------------

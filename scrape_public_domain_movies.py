@@ -366,6 +366,74 @@ class ArchiveScraper:
         self.accepted: list[dict] = []
         self.rejected: list[dict] = []
         self._seen_keys: set[str] = set()
+        # ------------------------------------------------------------------
+    def run(self) -> None:
+        log.info("Starting Internet Archive scrape…")
+
+        # Resume if possible
+        page = self._load_progress() or 1
+        total_fetched = 0
+        empty_pages = 0
+
+        MAX_EMPTY_PAGES = 10      # tolerate temporary outages
+        MAX_PAGES = 50000         # practical upper bound for multi-day runs
+
+        while page <= MAX_PAGES:
+            log.info("Fetching page %d…", page)
+            docs = self._fetch_page(page)
+
+            # Handle empty or failed pages
+            if not docs:
+                empty_pages += 1
+                log.warning(
+                    "Page %d returned no results (%d/%d)",
+                    page, empty_pages, MAX_EMPTY_PAGES
+                )
+
+                if empty_pages >= MAX_EMPTY_PAGES:
+                    log.error("Too many empty pages — stopping.")
+                    break
+
+                # Try next page anyway
+                page += 1
+                self._save_progress(page)
+                time.sleep(random.uniform(30, 90))
+                continue
+
+            # Reset empty counter on success
+            empty_pages = 0
+
+            # Process items
+            for item in docs:
+                self._process_item(item)
+
+            total_fetched += len(docs)
+            log.info(
+                "Progress — fetched: %d | accepted: %d | rejected: %d",
+                total_fetched, len(self.accepted), len(self.rejected)
+            )
+
+            # Save progress every page
+            self._save_progress(page)
+
+            # If Archive returns fewer than expected rows, likely end of dataset
+            if len(docs) < ROWS_PER_PAGE:
+                log.info("Reached final partial page — stopping.")
+                break
+
+            # Next page
+            page += 1
+
+            # Polite randomized delay to avoid rate limits
+            delay = random.uniform(45, 120)
+            log.info("Sleeping %.1f seconds before next page…", delay)
+            time.sleep(delay)
+
+        log.info(
+            "Scrape complete — accepted: %d | rejected: %d",
+            len(self.accepted), len(self.rejected)
+        )
+        self._log_rejection_summary()
 
     # ------------------------------------------------------------------
     def _save_progress(self, page: int) -> None:
@@ -558,76 +626,8 @@ class ArchiveScraper:
         })
 
     # ------------------------------------------------------------------
-    def run(self) -> None:
-        log.info("Starting Internet Archive scrape…")
+    
 
-        # Resume if possible
-        page = self._load_progress() or 1
-        total_fetched = 0
-        empty_pages = 0
-
-        MAX_EMPTY_PAGES = 10      # tolerate temporary outages
-        MAX_PAGES = 50000         # practical upper bound for multi-day runs
-
-        while page <= MAX_PAGES:
-            log.info("Fetching page %d…", page)
-            docs = self._fetch_page(page)
-
-            # Handle empty or failed pages
-            if not docs:
-                empty_pages += 1
-                log.warning("Page %d returned no results (%d/%d)", 
-                            page, empty_pages, MAX_EMPTY_PAGES)
-
-                if empty_pages >= MAX_EMPTY_PAGES:
-                    log.error("Too many empty pages — stopping.")
-                    break
-
-                # Try next page anyway
-                page += 1
-                self._save_progress(page)
-                time.sleep(random.uniform(30, 90))
-                continue
-
-            # Reset empty counter on success
-            empty_pages = 0
-
-            # Process items
-            for item in docs:
-                self._process_item(item)
-
-            total_fetched += len(docs)
-            log.info(
-                "Progress — fetched: %d | accepted: %d | rejected: %d",
-                total_fetched, len(self.accepted), len(self.rejected)
-            )
-
-            # Save progress every page
-            self._save_progress(page)
-
-            # If Archive returns fewer than expected rows, likely end of dataset
-            if len(docs) < ROWS_PER_PAGE:
-                log.info("Reached final partial page — stopping.")
-                break
-
-            # Next page
-            page += 1
-
-            # Polite randomized delay to avoid rate limits
-            time.sleep(random.uniform(45, 120))
-
-        log.info(
-            "Scrape complete — accepted: %d | rejected: %d",
-            len(self.accepted), len(self.rejected)
-        )
-        self._log_rejection_summary()
-
-
-        log.info(
-            "Scrape complete — accepted: %d | rejected: %d",
-            len(self.accepted), len(self.rejected)
-        )
-        self._log_rejection_summary()
     # ------------------------------------------------------------------
     def _log_rejection_summary(self) -> None:
         reasons: dict[str, int] = {}

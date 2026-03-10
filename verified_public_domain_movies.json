@@ -1,7 +1,7 @@
 {
   "version": "3.0",
-  "updated": "2026-03-10T00:35:08.148748+00:00",
-  "total_movies": 0,
+  "updated": "2026-03-10T01:39:07.726799+00:00",
+  "total_movies": 15,
   "source_info": {
     "primary": "Internet Archive (archive.org)",
     "verification": "Automated confidence scoring — minimum 90% required for inclusion",
@@ -18,6 +18,281 @@
     "noir",
     "kids"
   ],
-  "category_counts": {},
-  "movies": []
+  "category_counts": {
+    "drama": 13,
+    "documentary": 1,
+    "scifi": 1
+  },
+  "movies": [
+    {
+      "title": "Orphans of the Storm",
+      "year": 1921,
+      "creator": "D.W. Griffith",
+      "identifier": "OrphansoftheStorm",
+      "category": "drama",
+      "poster": "https://archive.org/services/img/OrphansoftheStorm",
+      "embed_url": "https://archive.org/embed/OrphansoftheStorm",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/OrphansoftheStorm",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Post no Bills",
+      "year": 1896,
+      "creator": "Georges Méliès",
+      "identifier": "Post_no_Bills",
+      "category": "drama",
+      "poster": "https://archive.org/services/img/Post_no_Bills",
+      "embed_url": "https://archive.org/embed/Post_no_Bills",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/Post_no_Bills",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "The County Fair",
+      "year": 1920,
+      "creator": "Maurice Tourneur",
+      "identifier": "CountyFair_",
+      "category": "drama",
+      "poster": "https://archive.org/services/img/CountyFair_",
+      "embed_url": "https://archive.org/embed/CountyFair_",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/CountyFair_",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Every Man His Own Cigar Lighter",
+      "year": 1903,
+      "creator": "Georges Méliès",
+      "identifier": "Every.Man.His.Own.Cigar.Lighter",
+      "category": "drama",
+      "poster": "https://archive.org/services/img/Every.Man.His.Own.Cigar.Lighter",
+      "embed_url": "https://archive.org/embed/Every.Man.His.Own.Cigar.Lighter",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/Every.Man.His.Own.Cigar.Lighter",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "[Trip Down Market Street Before the Fire, A]",
+      "year": 1906,
+      "creator": "Miles Brothers",
+      "identifier": "TripDown1905",
+      "category": "documentary",
+      "poster": "https://archive.org/services/img/TripDown1905",
+      "embed_url": "https://archive.org/embed/TripDown1905",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/TripDown1905",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "The Inventor Crazybrains and his Wonderful Airship",
+      "year": 1905,
+      "creator": "Georges Méliès",
+      "identifier": "The_Inventor_Crazybrains_and_his_Wonderful_Airship",
+      "category": "drama",
+      "poster": "https://archive.org/services/img/The_Inventor_Crazybrains_and_his_Wonderful_Airship",
+      "embed_url": "https://archive.org/embed/The_Inventor_Crazybrains_and_his_Wonderful_Airship",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/The_Inventor_Crazybrains_and_his_Wonderful_Airship",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Isn't Life Wonderful (1924)",
+      "year": 1924,
+      "creator": "D.W. Griffith",
+      "identifier": "isnt-life-wonderful-1924",
+      "category": "drama",
+      "poster": "https://archive.org/services/img/isnt-life-wonderful-1924",
+      "embed_url": "https://archive.org/embed/isnt-life-wonderful-1924",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/isnt-life-wonderful-1924",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Musical Tramps (1914)",
+      "year": 1914,
+      "creator": "Charles Chaplin",
+      "identifier": "musical-tramps-1914",
+      "category": "drama",
+      "poster": "https://archive.org/services/img/musical-tramps-1914",
+      "embed_url": "https://archive.org/embed/musical-tramps-1914",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/musical-tramps-1914",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Excursion to the Moon",
+      "year": 1908,
+      "creator": "Segundo de Chomón",
+      "identifier": "Excursion_to_the_Moon",
+      "category": "scifi",
+      "poster": "https://archive.org/services/img/Excursion_to_the_Moon",
+      "embed_url": "https://archive.org/embed/Excursion_to_the_Moon",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/Excursion_to_the_Moon",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "General Motors Around the World (Part II)",
+      "year": 1927,
+      "creator": "Handy (Jam) Organization",
+      "identifier": "GeneralM1927_2",
+      "category": "drama",
+      "poster": "https://archive.org/services/img/GeneralM1927_2",
+      "embed_url": "https://archive.org/embed/GeneralM1927_2",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/GeneralM1927_2",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Tin Minh (1918)",
+      "year": 1918,
+      "creator": "Louis Feuillade, Leon Klausse",
+      "identifier": "Tin-Minh-1918",
+      "category": "drama",
+      "poster": "https://archive.org/services/img/Tin-Minh-1918",
+      "embed_url": "https://archive.org/embed/Tin-Minh-1918",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/Tin-Minh-1918",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Tram Journey Through Southampton (1900) Directed By William K. L. Dickson",
+      "year": 1900,
+      "creator": "William K.L. Dickson",
+      "identifier": "tram-journey-through-southampton-1900-directed-by-william-k.-l.-dickson",
+      "category": "drama",
+      "poster": "https://archive.org/services/img/tram-journey-through-southampton-1900-directed-by-william-k.-l.-dickson",
+      "embed_url": "https://archive.org/embed/tram-journey-through-southampton-1900-directed-by-william-k.-l.-dickson",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/tram-journey-through-southampton-1900-directed-by-william-k.-l.-dickson",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Hanawa Hekonai meitô no maki (1917)",
+      "year": 1917,
+      "creator": "Junichi Kôuchi",
+      "identifier": "hanawa-hekonai-meito-no-maki-1917",
+      "category": "drama",
+      "poster": "https://archive.org/services/img/hanawa-hekonai-meito-no-maki-1917",
+      "embed_url": "https://archive.org/embed/hanawa-hekonai-meito-no-maki-1917",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/hanawa-hekonai-meito-no-maki-1917",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Faust (1926)",
+      "year": 1926,
+      "creator": "F.W. Murnau, Hans Kyser, Carl Hoffman",
+      "identifier": "faust-1926_202505",
+      "category": "drama",
+      "poster": "https://archive.org/services/img/faust-1926_202505",
+      "embed_url": "https://archive.org/embed/faust-1926_202505",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/faust-1926_202505",
+      "verified_at": "2026-03-09"
+    },
+    {
+      "title": "Cyrano De Bergerac (1900) Directed By Clément Maurice",
+      "year": 1900,
+      "creator": "Clément Maurice",
+      "identifier": "cyrano-de-bergerac-1900-directed-by-clement-maurice",
+      "category": "drama",
+      "poster": "https://archive.org/services/img/cyrano-de-bergerac-1900-directed-by-clement-maurice",
+      "embed_url": "https://archive.org/embed/cyrano-de-bergerac-1900-directed-by-clement-maurice",
+      "source": "Internet Archive",
+      "confidence_score": 100,
+      "public_domain_evidence": [
+        "release_year_pre_1928",
+        "explicit_public_domain_license",
+        "trusted_collection"
+      ],
+      "source_page": "https://archive.org/details/cyrano-de-bergerac-1900-directed-by-clement-maurice",
+      "verified_at": "2026-03-09"
+    }
+  ]
 }
