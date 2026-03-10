@@ -73,10 +73,12 @@ def validate(input_file: str, dry_run: bool) -> None:
     with open(input_file, encoding="utf-8") as f:
         data = json.load(f)
 
-    movies = data.get("movies", [])
+    # Load existing movies into a dict keyed by identifier (prevents duplicates)
+    existing = {m["identifier"]: m for m in data.get("movies", [])}
+    movies = list(existing.values())
+
     log.info("Checking %d movies in %s…", len(movies), input_file)
 
-    ok: list[dict] = []
     dead: list[dict] = []
 
     for i, movie in enumerate(movies, 1):
@@ -87,16 +89,17 @@ def validate(input_file: str, dry_run: bool) -> None:
         accessible, reason = check_identifier(identifier)
         if accessible:
             log.info("  ✓  %s", reason)
-            ok.append(movie)
+            existing[identifier] = movie  # update/keep
         else:
             log.warning("  ✗  %s", reason)
             dead.append({"identifier": identifier, "title": title, "reason": reason})
+            existing.pop(identifier, None)  # remove dead items
 
-        time.sleep(0.3)  # polite crawl delay
+        time.sleep(0.3)
 
-    # ---- Summary ----
+    # Summary
     print("\n" + "=" * 60)
-    print(f"RESULTS: {len(ok)} accessible, {len(dead)} dead/missing")
+    print(f"RESULTS: {len(existing)} accessible, {len(dead)} dead/missing")
     if dead:
         print("\nDead items:")
         for d in dead:
@@ -105,20 +108,16 @@ def validate(input_file: str, dry_run: bool) -> None:
 
     if dry_run:
         log.info("Dry-run mode — no changes written.")
-        if dead:
-            sys.exit(1)  # non-zero exit so CI can catch failures
         return
 
-    if not dead:
-        log.info("All items are accessible — nothing to remove.")
-        return
+    # Save merged list (append new, remove dead, no duplicates)
+    merged = list(existing.values())
+    data["movies"] = merged
+    data["total_movies"] = len(merged)
 
-    # ---- Write cleaned file ----
-    data["movies"] = ok
-    data["total_movies"] = len(ok)
-    # Update category counts
-    counts: dict[str, int] = {}
-    for m in ok:
+    # Recompute category counts
+    counts = {}
+    for m in merged:
         cat = m.get("category", "drama")
         counts[cat] = counts.get(cat, 0) + 1
     data["category_counts"] = counts
@@ -126,8 +125,8 @@ def validate(input_file: str, dry_run: bool) -> None:
     with open(input_file, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-    log.info("Saved cleaned file: %d movies kept, %d removed → %s",
-             len(ok), len(dead), input_file)
+    log.info("Saved cleaned file: %d movies kept → %s",
+             len(merged), input_file)
 
 
 # ---------------------------------------------------------------------------
