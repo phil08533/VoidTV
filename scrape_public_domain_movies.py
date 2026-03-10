@@ -20,7 +20,8 @@ import json
 import time
 import logging
 import requests
-from datetime import date, datetime
+import urllib.parse
+from datetime import date, datetime, timezone
 
 # ---------------------------------------------------------------------------
 # Logging
@@ -419,25 +420,25 @@ class ArchiveScraper:
 
     # ------------------------------------------------------------------
     def _fetch_page(self, page: int) -> list[dict]:
-        params = {
+        # Build the URL manually so fl[] brackets are NOT percent-encoded.
+        # requests encodes fl[] → fl%5B%5D which Archive.org does not recognise,
+        # causing it to silently return zero fields and therefore zero docs.
+        fields_qs = "&".join(f"fl[]={f}" for f in self.FIELDS)
+        base_qs = urllib.parse.urlencode({
             "q": self.QUERY,
-            "fl[]": self.FIELDS,
             "rows": ROWS_PER_PAGE,
             "page": page,
             "output": "json",
-            "save": "yes",
-        }
+        })
+        url = f"{ARCHIVE_SEARCH_URL}?{base_qs}&{fields_qs}"
+
         for attempt in range(5):
             try:
-                resp = self.session.get(
-                    ARCHIVE_SEARCH_URL, params=params, timeout=60
-                )
+                resp = self.session.get(url, timeout=60)
                 resp.raise_for_status()
                 data = resp.json()
                 docs = data.get("response", {}).get("docs", [])
-                log.info(
-                    "Page %d — received %d items", page, len(docs)
-                )
+                log.info("Page %d — received %d items", page, len(docs))
                 return docs
             except Exception as exc:
                 wait = 2 ** attempt
@@ -493,7 +494,7 @@ class ArchiveScraper:
                 "identifier": identifier,
                 "confidence_score": score,
                 "rejection_reason": reason,
-                "timestamp": datetime.utcnow().isoformat(),
+                "timestamp": datetime.now(timezone.utc).isoformat(),
             })
             return
 
@@ -506,7 +507,7 @@ class ArchiveScraper:
                 "identifier": identifier,
                 "confidence_score": score,
                 "rejection_reason": "item_not_accessible",
-                "timestamp": datetime.utcnow().isoformat(),
+                "timestamp": datetime.now(timezone.utc).isoformat(),
             })
             return
 
@@ -580,7 +581,7 @@ class ArchiveScraper:
 
         output = {
             "version": "3.0",
-            "updated": datetime.utcnow().isoformat(),
+            "updated": datetime.now(timezone.utc).isoformat(),
             "total_movies": len(self.accepted),
             "source_info": {
                 "primary": "Internet Archive (archive.org)",
